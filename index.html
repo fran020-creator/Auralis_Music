@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auralis - Player de Música</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="audio" href="./music/song1.mp3">
+
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="./img/logo.png" alt="Auralis" class="logo-img">
+      <h2>Auralis</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link active" data-page="home">
+          <span>🏠</span>
+          <span>Início</span>
+        </a></li>
+        <li><a href="#" class="nav-link" data-page="search">
+          <span>🔍</span>
+          <span>Buscar</span>
+        </a></li>
+        <li><a href="#" class="nav-link" data-page="library">
+          <span>📚</span>
+          <span>Sua Biblioteca</span>
+        </a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="header">
+      <button class="nav-buttons">
+        <span>←</span>
+        <span>→</span>
+      </button>
+      <div class="user-menu">
+        <button class="upgrade-btn">Premium</button>
+        <div class="profile">
+          <span>Usuário</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Página Início -->
+    <div id="homePage" class="page active">
+      <section class="hero">
+        <h1>Suas músicas favoritas</h1>
+      </section>
+
+      <!-- Músicas disponíveis -->
+      <section class="section">
+        <h2>🎵 Todas as Músicas</h2>
+        <div class="songs-list" id="songsList">
+          <!-- Músicas serão inseridas aqui -->
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>📻 Estações de Rádio</h2>
+        <div class="radio-stations" id="radioStations">
+          <!-- Estações serão inseridas aqui -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Página Buscar -->
+    <div id="searchPage" class="page">
+      <section class="hero">
+        <div class="search-bar">
+          <span>🔍</span>
+          <input type="text" id="searchInput" placeholder="Busque por artista, música ou álbum..." />
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 id="searchResultsTitle">Resultados da Busca</h2>
+        <div class="songs-list" id="searchResults">
+          <!-- Resultados serão inseridos aqui -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Página Biblioteca -->
+    <div id="libraryPage" class="page">
+      <section class="hero">
+        <h1>📚 Sua Biblioteca</h1>
+      </section>
+
+      <section class="section">
+        <h2>🎵 Suas Músicas Favoritas</h2>
+        <div class="songs-list" id="librarySongs">
+          <!-- Músicas da biblioteca serão inseridas aqui -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Player -->
+  <footer class="player">
+    <div class="track-info">
+      <div class="track-cover" id="trackCover">🎵</div>
+      <div class="track-details">
+        <span class="track-name" id="trackName">Nenhuma música tocando</span>
+        <span class="artist-name" id="artistName">Selecione uma música</span>
+      </div>
+    </div>
+
+    <div class="player-controls">
+      <div class="controls">
+        <button class="shuffle-btn" title="Aleatório">🔀</button>
+        <button class="prev-btn" title="Anterior">⏮</button>
+        <button class="play-btn" title="Play">▶</button>
+        <button class="next-btn" title="Próxima">⏭</button>
+        <button class="repeat-btn" title="Repetir">🔁</button>
+      </div>
+      <div class="progress-bar" id="progressBar">
+        <span class="current-time" id="currentTime">0:00</span>
+        <div class="bar">
+          <div class="progress" id="progress"></div>
+        </div>
+        <span class="total-time" id="totalTime">0:00</span>
+      </div>
+    </div>
+
+    <div class="volume-controls">
+      <button class="volume-btn" id="volumeBtn">🔊</button>
+      <div class="volume-slider">
+        <input type="range" min="0" max="100" value="50" class="volume-range" id="volumeRange">
+      </div>
+    </div>
+  </footer>
+
+  <!-- Audio Element (escondido) -->
+  <audio id="audioPlayer" preload="metadata"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
