@@ -21,8 +21,3 @@ Player de música criado com HTML, CSS e JavaScript puro. Interface inspirada no
 3. Clique em uma música para tocar
 4. Use os controles do player
 
-## 🌐 Deploy no GitHub Pages
-1. Faça push deste código para seu GitHub
-2. Vá em Settings > Pages
-3. Selecione a branch `main`
-4. Pronto! Seu site estará online
